@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <title>Sample-Website2</title>
+</head>
+<body>
+    <!--Header-->
+    <header>
+        <h1 class="site-title">Cresta Design</h1>
+        <div id="hamburger">
+            <p class="nav-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </p>
+            <nav id="nav">
+                <ul class="navigation-group">
+                    <li class="navigation-item"><a href="#Concept">Concept</a></li>
+                    <li class="navigation-item"><a href="#Service">Service</a></li>
+                    <li class="navigation-item"><a href="#Works">Works</a></li>
+                    <li class="navigation-item"><a href="#Contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!--fv-->
+    <section id="fv">
+
+    </section>
+    <!--concept-->
+    <section id="concept">
+
+    </section>
+    <!--Works-->
+    <section id="works">
+
+    </section>
+    <!--Service-->
+    <section id="service">
+
+    </section>
+    <!--Contact-->
+    <section id="contact">
+
+    </section>
+    <!--footer-->
+    <footer>
+
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(function(){
+            $('.nav-btn').on("click",function(){
+                $(this).toggleClass('open');
+                $('#nav').toggleClass('open');
+            });
+        });
+
+        $(function(){
+            $('.navigation-group li a').on("click",
+            function(){
+                console.log("click");
+                $('.nav-btn').toggleClass('open');
+                $('#nav').toggleClass('open');
+            });
+        });
+    </script>
+</body>
+</html>

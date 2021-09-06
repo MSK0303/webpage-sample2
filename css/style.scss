@@ -1,0 +1,159 @@
+//レスポンシブ対応
+//スマホ
+$lp:1030px;
+$mb:768px;
+@mixin laptop {
+    @media screen and (max-width: $lp) {
+        @content;
+    }
+}
+@mixin mobile {
+    @media screen and (max-width: $mb) {
+        @content;
+    }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/**************************************************************************************************
+* header 
+**************************************************************************************************/
+header {
+    display: flex;
+    width: 100%;
+    height: 74px;
+    background-color: #00000000;
+    align-items: center;
+
+    & .site-title {
+        font-family: "Roboto";
+        margin-left: 120px;
+        font-size: 26px;
+        font-weight: 600;
+        margin-right: auto;
+        color: white;
+
+        @include mobile {
+            margin-left: 15px;
+        }
+    }
+
+    & #hamburger{
+        & .nav-btn {
+            display: none;
+        }
+        & #nav {
+            & .navigation-group {
+                padding: 0px;
+                & .navigation-item {
+                    list-style: none;
+                    display: inline-block;
+                    margin-right: 54px;
+    
+                    &:last-child {
+                        margin-right: 120px;
+                    }
+    
+                    & a {
+                        font-family: "Roboto";
+                        font-size: 16px;
+                        font-weight: 600;
+                        color: white;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+
+        @include mobile {
+            & .nav-btn {
+                display: block;
+                position: fixed;
+                top: 10px;
+                right: 30px;
+                width: 30px;
+                height: 24px;
+                z-index: 3;
+                & span {
+                    position: absolute;
+                    width: 100%;
+                    height: 4px;
+                    background: white;
+                    border-radius: 10px;
+                    -webkit-transition: all 400ms;
+                    transition: all 400ms;
+
+                    &:nth-child(1) {
+                        top: 0;
+                    }
+                    &:nth-child(2) {
+                        top: 10px;
+                    }
+                    &:nth-child(3) {
+                        top: 20px;
+                    }
+                }
+
+                &.open {
+                    & span {
+                        &:nth-of-type(1){
+                            top: 16px;
+                            transform: rotate(-45deg);
+                        }
+                        &:nth-of-type(2),
+                        &:nth-of-type(3) {
+                            top: 16px;
+                            transform: rotate(45deg);
+                        }
+                    }
+                }
+            }
+
+            & #nav {
+                position: fixed;
+                background-color: #1B1310;
+                top: 0;
+                right: -100%;
+                width: 100%;
+                height: 100%;
+                z-index: 2;
+
+                &.open {
+                    right: 0px;
+                }
+
+                & .navigation-group {
+                    display: flex;
+                    flex-direction: column;
+                    padding: 0px;
+                    height: 100%;
+                    text-align: center;
+                    justify-content: center;
+                    & .navigation-item {
+                        width: 100%;
+                        margin-right: 0px;
+                        padding-bottom: 75px;
+                        list-style: none;
+                        &:last-child {
+                            margin-right: 0px;
+                            padding-bottom: 0px;
+                        }
+                        & a {
+                            font-family: "Roboto";
+                            font-size: 16px;
+                            font-weight: 600;
+                            color: white;
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/**************************************************************************************************
+*
+**************************************************************************************************/
