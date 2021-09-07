@@ -67,6 +67,7 @@
         </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="src/jquery.bgswitcher.js"></script>
     <script>
         $(function(){
             $('.nav-btn').on("click",function(){
@@ -81,6 +82,13 @@
                 console.log("click");
                 $('.nav-btn').toggleClass('open');
                 $('#nav').toggleClass('open');
+            });
+        });
+
+        $(function(){
+            const fv_bimg_list = ["../img/fv-bgi_01@2x.jpg","../img/fv-bgi_02@2x.jpg","../img/fv-bgi_03@2x.jpg"]
+            $('#fv').bgSwitcher({
+                images: fv_bimg_list, // 切り替える背景画像を指定
             });
         });
     </script>
